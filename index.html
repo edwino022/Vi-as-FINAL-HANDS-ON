@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6347;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      background: #1a1a1a;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+    }
+
+    .menu-mobile a {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    #hero {
+      background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+      color: white;
+      text-align: left;
+      flex-direction: column;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #ff6347;
+      padding: 10px 20px;
+      margin: 10px 0;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .button:hover {
+      background: #ff6347;
+      color: white;
+    }
+
+    #about, #skills, #contact {
+      padding: 60px 20px;
+    }
+
+    #about {
+      background: #f4f4f4;
+    }
+
+    #skills {
+      background: #fff;
+    }
+
+    #contact {
+      background: #1a1a1a;
+      color: white;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .menu-mobile.active {
+        display: flex;
+      }
+
+      #hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#hero">Portfolio</a>
+    </div>
+    <div class="menu">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <h1>Welcome to My Portfolio</h1>
+      <p>Your future web designer and developer!</p>
+      <a href="#about" class="button">About Me</a>
+      <a href="#contact" class="button">Contact</a>
+    </div>
+    <img src="IMG_20240422_003138_761.jpg" alt="Edwin's Photo" class="hero-img">
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Edwin, a web designer passionate about creating beautiful, user-friendly websites.</p>
+  </section>
+
+  <!-- Skills & Work Experience -->
+  <section id="skills">
+    <h2>Skills & Work Experience</h2>
+    <ul>
+      <li>Web Design</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>UI/UX Design</li>
+      <li>Responsive Web Development</li>
+    </ul>
+    <p>Future Aspiration: Becoming a full-stack web developer.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: example@example.com</p>
+    <p>Phone: +123 456 7890</p>
+    <p>Socials: <a href="#">LinkedIn</a>, <a href="#">GitHub</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('menu-mobile');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
